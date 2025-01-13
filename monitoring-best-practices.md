@@ -119,10 +119,10 @@ finally:
 ```
 
 ### Performance Considerations
-- Use appropriate metric types
-- Minimize label cardinality
-- Batch operations when possible
-- Use client libraries' default collectors
+- Use appropriate metric types  (e.g., avoid counters for values that decrease)
+- Minimize label cardinality to prevent resource overhead
+- Batch operations when possible to reduce metric emission overhead.
+- Use client libraries' default collectors for standard process metrics.
 
 ## Security Best Practices
 
@@ -133,21 +133,21 @@ finally:
 
 2. **Network Security**
    - Use firewall rules
-   - Enable TLS where possible
-   - Restrict access to metrics endpoints
+   - Use TLS for encrypted connections to Prometheus and Grafana.
+   - Restrict access to metrics endpoints using firewall rules.
 
 3. **Data Protection**
-   - Avoid sensitive data in metrics/labels
-   - Regular backups of dashboards
-   - Monitor access logs
+   - Avoid exposing sensitive data in labels or metric names.
+   - Regularly back up dashboards and configurations.
+   - Monitor access logs for unauthorized attempts.
 
 ## Maintenance
 
 1. **Regular Tasks**
-   - Monitor disk usage
-   - Review and update alerting rules
-   - Clean up unused dashboards
-   - Update documentation
+   - Monitor disk and memory usage.
+   - Periodically review and optimize alerting rules.
+   - Clean up unused dashboards and matrics.
+   - Update documentation for any changes.
 
 2. **Backup Strategy**
    - Export dashboard configurations
