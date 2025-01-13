@@ -4,13 +4,14 @@
 
 ### Metric Naming
 - Use consistent naming conventions
+- Use lowercase and separate words with underscores.
 - Format: `application_subsystem_unit_suffix`
 - Example: `scraper_requests_total_count`
 
 ### Metric Types
 1. **Counter**
    - Use for cumulative metrics
-   - Never decreases
+   - Never decreases i.e. Value only increases (reset only on restart).
    - Example: Total requests, errors
    ```python
    requests_total = Counter('scraper_requests_total', 'Total requests made')
@@ -52,29 +53,35 @@ http_requests_total.labels(user_id="123456", timestamp="...")
 ### Dashboard Organization
 1. **Template Variables**
    - Use for reusable dashboards
-   - Example: Environment, instance selection
+   - Example:  Select environment, instance, or region.
 
 2. **Panel Arrangement**
-   - Most important metrics at top
-   - Related metrics grouped together
-   - Consistent time ranges
+   - Place the most critical metrics at the top.
+   - Group related metrics together for clarity.
+   - Standardize time ranges for consistency.
 
 3. **Alerting**
-   - Set meaningful thresholds
-   - Include clear alert messages
+   - Define meaningful thresholds and avoid alert fatigue.
+   - Write clear and actionable alert messages.
+   - Use a staging environment to test alerts before deployment.
    - Define appropriate evaluation intervals
 
 ### Visualization
 1. **Graph Types**
    - Use appropriate visualization for each metric
-   - Counter rates: Area graphs
-   - Gauges: Gauge/stat panels
-   - Comparisons: Bar charts
+   - Counter rates: Area or line graphs
+   - Gauges: Gauge or stat panels
+   - Comparisons: : Use bar or pie charts appropriately
+
 
 2. **Colors**
    - Use consistent color scheme
    - Red for errors/issues
    - Green for success/healthy states
+   - Yellow: Warning/intermediate states
+
+3. **Annotations**
+- Use annotations to mark important events like deployments or incidents.
 
 ## Python Integration Best Practices
 
