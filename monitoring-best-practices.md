@@ -150,23 +150,25 @@ finally:
    - Update documentation for any changes.
 
 2. **Backup Strategy**
-   - Export dashboard configurations
-   - Document custom configurations
-   - Maintain configuration in version control
+   - Regularly export and store dashboard configurations.
+   - Document custom configurations and metrics.
+   - Use version control for all configuration files.
 
 ## Development Workflow
 
 1. **Testing**
-   - Unit test custom metrics
-   - Test dashboard configurations
+   - Unit test all custom metrics and integration points.
+   - Validate dashboard configurations and alerting rules in staging.
+   - Monitor staging environment for anomalies post-deployment.
    - Validate alerting rules
 
 2. **Documentation**
-   - Document custom metrics
-   - Maintain dashboard change log
+   - Document all custom metrics and their purposes.
+   - Maintain a change log for dashboard updates.
+   - Provide detailed runbooks for common issues and resolutions.
    - Keep runbooks updated
 
 3. **Version Control**
-   - Store configurations in Git
-   - Use semantic versioning
-   - Include meaningful commit messages
+   - Store all configurations (Prometheus, Grafana, dashboards) in Git.
+   - Use semantic versioning for changes.
+   - Write clear, meaningful commit messages to track changes.
