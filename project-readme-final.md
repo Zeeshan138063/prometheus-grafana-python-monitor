@@ -33,6 +33,7 @@ pip install prometheus_client requests beautifulsoup4
 2. **Install Prometheus**
 - Visit [Prometheus Downloads](https://prometheus.io/download/) for the latest version
 - Download and extract Prometheus
+- Go inside of prometheus folder
 
 3. **Install Grafana**
 - Visit [Grafana Downloads](https://grafana.com/grafana/download) for the latest version
@@ -42,7 +43,7 @@ pip install prometheus_client requests beautifulsoup4
 
 ### Prometheus Setup
 
-1. **Create prometheus.yml**
+1. **Inside of promethus folder update prometheus.yml**
 ```yaml
 global:
   scrape_interval: 15s
